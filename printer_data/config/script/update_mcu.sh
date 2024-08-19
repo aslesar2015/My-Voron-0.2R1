@@ -4,7 +4,7 @@
 
 #mkdir ~/firmware
 
-#sudo service klipper stop
+sudo service klipper stop
 
 cd ~/katapult
 git pull
@@ -52,4 +52,4 @@ echo "Finish update MCU Manta M5P"
 
 echo ""
 
-#sudo service klipper start
+sudo service klipper start
