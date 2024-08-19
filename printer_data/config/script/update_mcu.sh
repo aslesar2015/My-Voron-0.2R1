@@ -34,8 +34,10 @@ cd ~/katapult/scripts
 ## Update MCU EBB36
 #echo "Start update MCU EBB36"
 #echo ""
-python3 flash_can.py -i can0 -u SERIAL_UUID -f ~/firmware/ebb36_katapult.bin
-python3 flash_can.py -i can0 -u SERIAL_UUID -f ~/firmware/ebb36_klipper.bin
+python3 flash_can.py -i can0 -u 59d755ed9e3b -f ~/firmware/ebb36_katapult.bin
+sleep 2
+python3 flash_can.py -i can0 -u 59d755ed9e3b -f ~/firmware/ebb36_klipper.bin
+sleep 2
 #read -p "MCU EBB36 firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
 #echo "Finish update MCU EBB36"
 
