@@ -14,10 +14,10 @@ make clean
 make -j4 KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.manta_m5p.Katapult
 mv ~/katapult/out/deployer.bin ~/firmware/manta_m5p_katapult.bin
 
-#make clean
-##make menuconfig KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.Katapult
-#make -j4 KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.Katapult
-#mv ~/katapult/out/deployer.bin ~/firmware/ebb36_katapult.bin
+make clean
+#make menuconfig KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.Katapult
+make -j4 KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.Katapult
+mv ~/katapult/out/deployer.bin ~/firmware/ebb36_katapult.bin
 
 cd ~/klipper
 make clean
@@ -25,17 +25,17 @@ make clean
 make -j4 KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.manta_m5p.CAN
 mv ~/klipper/out/klipper.bin ~/firmware/manta_m5p_klipper.bin
 
-#make clean
-##make menuconfig KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.CAN
-#make -j4 KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.CAN
-#mv ~/klipper/out/klipper.bin ~/firmware/ebb36_klipper.bin
+make clean
+#make menuconfig KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.CAN
+make -j4 KCONFIG_CONFIG=/home/biqu/printer_data/config/script/config.ebb36.CAN
+mv ~/klipper/out/klipper.bin ~/firmware/ebb36_klipper.bin
 
 cd ~/katapult/scripts
 ## Update MCU EBB36
 #echo "Start update MCU EBB36"
 #echo ""
-#python3 flash_can.py -i can0 -u SERIAL_UUID -f ~/firmware/ebb36_katapult.bin
-#python3 flash_can.py -i can0 -u SERIAL_UUID -f ~/firmware/ebb36_klipper.bin
+python3 flash_can.py -i can0 -u SERIAL_UUID -f ~/firmware/ebb36_katapult.bin
+python3 flash_can.py -i can0 -u SERIAL_UUID -f ~/firmware/ebb36_klipper.bin
 #read -p "MCU EBB36 firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
 #echo "Finish update MCU EBB36"
 
