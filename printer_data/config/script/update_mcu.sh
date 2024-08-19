@@ -45,10 +45,10 @@ sleep 2
 echo "Start update MCU Manta M5P"
 echo ""
 python3 flash_can.py -i can0 -u c7b31ed2d4a5 -f ~/firmware/manta_m5p_katapult.bin
+sleep 2
 python3 flash_can.py -d /dev/serial/by-id/usb-katapult_stm32g0b1xx_08002B000C504B5735313920-if00 -f ~/firmware/manta_m5p_katapult.bin
 sleep 2
 python3 flash_can.py -d /dev/serial/by-id/usb-katapult_stm32g0b1xx_08002B000C504B5735313920-if00 -f ~/firmware/manta_m5p_klipper.bin
-sleep 2
 #read -p "MCU Manta M5P firmware flashed, please check above for any errors. Press [Enter] to continue, or [Ctrl+C] to abort"
 echo "Finish update MCU Manta M5P"
 
